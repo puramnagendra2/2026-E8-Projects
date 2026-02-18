@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+      integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+
+    <title>COTTON PLANT DISEASE PREDICTION</title>
+  </head>
+
+  <body>
+    <button type="button" id="home-button" class="home">Home</button>
+    <div>
+      <img
+        src="/static/images/cotton_plant_banner.jpg"
+        class="w3-border w3-padding"
+        alt="Indian AI Production"
+        style="width: 100%"
+      />
+    </div>
+
+    <div class="container my-2">
+      <div class="row mb-5">
+        <div class="col-sm" style="margin-bottom: 23px">
+          <span class="border border-primary">
+            <img
+              src="{{ user_image }}"
+              alt="User Image"
+              class="img-thumbnail"
+            />
+            <!-- <img src="{{pred_output}}" alt="User Image" class="img-thumbnail"> -->
+          </span>
+        </div>
+
+        <div class="col-sm">
+          <div>
+            <h1
+              style="
+                padding: 15px;
+                background-color: rgb(153, 156, 150);
+                color: white;
+              "
+              class="text-center mb-5 content-h1 rounded"
+            >
+              Target Spot
+            </h1>
+          </div>
+          <div>
+            <p>
+              <b>Target Spot </b>Target spot, also known as Corynespora leaf spot,
+              is a fungal disease in cotton caused by Corynespora cassiicola,
+              affecting various cotton-producing regions, particularly in warm, humid environments.
+            </p>
+            <br>
+            <p><b>Appearence </b>The disease manifests as brown lesions with concentric rings on leaves, often starting in the lower canopy.
+              Lesions can grow larger than 1/4 inch and may also appear on petioles and bolls.</p>
+            <br>
+            <p><b>Damage </b>Target spot leads to premature defoliation, particularly from the lower canopy, reducing photosynthesis and yield.
+              Severe infections can cause significant lint loss, impacting overall cotton production and profitability.</p>
+          </div>
+
+          <hr class="w-100 mx-auto" />
+        </div>
+      </div>
+
+      <h1>Solution for Diseases</h1>
+    </div>
+
+    <section>
+      <div class="container">
+        <h1
+          style="
+            padding: 15px;
+            background-color: rgb(153, 156, 150);
+            color: white;
+          "
+          class="text-center my-3 content-h1"
+        >
+          Recommended Products
+        </h1>
+      </div>
+
+      <div class="container">
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-body text-center card-style">
+              <img
+                style="border-radius: 10px"
+                class="img-fluid"
+                src="/static/target/quadris.png"
+                alt=""
+              />
+            </div>
+            <h3>Quadris</h3>
+          </div>
+          <div class="card">
+            <div class="card-body text-center card-style">
+              <img
+                style="border-radius: 10px"
+                class="img-fluid"
+                src="/static/target/priaxor.png"
+                alt=""
+              />
+            </div>
+            <h3>Priaxor</h3>
+          </div>
+          <div class="card">
+            <div class="card-body text-center card-style">
+              <img
+                style="border-radius: 10px"
+                class="img-fluid"
+                src="/static/target/miravis.png"
+                alt=""
+              />
+            </div>
+            <h3>Miravis</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.getElementById('home-button').onclick = function() {
+        window.location.href = "{{ url_for('home') }}"; // Adjust 'home' to your route name
+      };
+    </script>
+  </body>
+</html>

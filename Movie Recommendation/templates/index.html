@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Public+Sans:wght@400;500;700;900">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: "Public Sans", "Noto Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <div class="flex flex-col min-h-screen">
+      <header class="flex items-center justify-between border-b border-[#f5f3f0] px-10 py-3">
+        <div class="flex items-center gap-4 text-[#181611]">
+          <div class="w-4 h-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_6_330)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330"><rect width="48" height="48" fill="white"></rect></clipPath>
+              </defs>
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold">
+            <a class="text-[#181611]" href="/">Movie Recommender</a>
+          </h2>
+        </div>
+        <div class="flex justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-sm font-medium text-[#181611]" href="/about">About</a>
+            <a class="text-sm font-medium text-[#181611]" href="/contact">Contact</a>
+          </div>
+          <div class="flex gap-2">
+            <button class="flex items-center justify-center h-10 px-4 overflow-hidden text-sm font-bold text-white bg-[#4746E5] rounded-lg min-w-[84px] max-w-[480px] truncate">
+              <a href="/signup"><span>SignUp</span></a>
+            </button>
+            <button class="flex items-center justify-center h-10 px-4 overflow-hidden text-sm font-bold text-[#181611] bg-[#f5f3f0] rounded-lg min-w-[84px] max-w-[480px] truncate">
+              <a href="/login"><span>Login</span></a>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 px-10 py-5">
+        <div class="flex flex-col items-center justify-center gap-6 p-4 bg-center bg-no-repeat bg-cover min-h-[480px] rounded-lg" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1850&q=80");'>
+          <div class="text-center text-white">
+            <h1 class="text-4xl font-black leading-tight tracking-tight md:text-5xl">
+              Discover Your Next Favorite Movie
+            </h1>
+            <h2 class="mt-2 text-sm font-normal leading-normal md:text-base">
+              Personalized movie recommendations based on your preferences. Find hidden gems and new favorites.
+            </h2>
+          </div>
+          <button class="flex items-center justify-center h-12 px-5 overflow-hidden text-base font-bold text-[#FFFFFF] bg-[#4746E5] rounded-lg min-w-[84px] max-w-[480px] truncate">
+            <a href="/login"><span>Get Started</span></a>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 mt-12 md:grid-cols-3">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 mb-4 text-4xl text-[#4746E5] bg-[#fdf6e3] rounded-full">
+              🎬
+            </div>
+            <h3 class="text-lg font-bold">Smart Recommendations</h3>
+            <p class="mt-2 text-sm text-gray-600">Get personalized movie suggestions based on content-based filtering</p>
+          </div>
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 mb-4 text-4xl text-[#4746E5] bg-[#fdf6e3] rounded-full">
+              🎭
+            </div>
+            <h3 class="text-lg font-bold">Diverse Selection</h3>
+            <p class="mt-2 text-sm text-gray-600">Access thousands of movies across all genres and time periods</p>
+          </div>
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 mb-4 text-4xl text-[#4746E5] bg-[#fdf6e3] rounded-full">
+              📊
+            </div>
+            <h3 class="text-lg font-bold">Track Your Taste</h3>
+            <p class="mt-2 text-sm text-gray-600">Keep a history of your searches and discover your viewing patterns</p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="py-10 text-center">
+        <p class="text-[#8a7d60]">© 2025 Movie Recommender. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Movie Recommender</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Navbar -->
+  <header class="flex items-center justify-between border-b border-[#f5f3f0] px-10 py-3">
+    <div class="flex items-center gap-4 text-[#181611]">
+      <div class="w-4 h-4">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_6_330)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_6_330"><rect width="48" height="48" fill="white"></rect></clipPath>
+          </defs>
+        </svg>
+      </div>
+      <h2 class="text-lg font-bold">
+        <a class="text-[#181611]" href="/">Movie Recommender</a>
+      </h2>
+    </div>
+    <div class="flex justify-end gap-8">
+      <div class="flex items-center gap-9">
+        <a class="text-sm font-medium text-[#181611]" href="/">Home</a>
+        <a class="text-sm font-medium text-[#181611]" href="/about">About</a>
+      </div>
+      <div class="flex gap-2">
+        <button class="flex items-center justify-center h-10 px-4 overflow-hidden text-sm font-bold text-white bg-[#4746E5] rounded-lg min-w-[84px] max-w-[480px] truncate">
+          <a href="/signup"><span>SignUp</span></a>
+        </button>
+        <button class="flex items-center justify-center h-10 px-4 overflow-hidden text-sm font-bold text-[#181611] bg-[#f5f3f0] rounded-lg min-w-[84px] max-w-[480px] truncate">
+          <a href="/login"><span>Login</span></a>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold text-center text-indigo-600 mb-6">📩 Contact Us</h1>
+    <p class="text-center text-gray-600 mb-12">
+      Have any questions, feedback, or suggestions? Reach out to us using the details below.
+    </p>
+
+    <div class="bg-white shadow-lg rounded-2xl p-8 space-y-6">
+      <div>
+        <h2 class="text-lg font-semibold text-gray-800">📧 Email</h2>
+        <p class="text-gray-600 mt-2">support@movierecommender.com</p>
+      </div>
+      <div>
+        <h2 class="text-lg font-semibold text-gray-800">📞 Phone</h2>
+        <p class="text-gray-600 mt-2">+44 20 7946 0958</p>
+      </div>
+      <div>
+        <h2 class="text-lg font-semibold text-gray-800">📍 Address</h2>
+        <p class="text-gray-600 mt-2">
+          Movie Recommender HQ <br>
+          221B Baker Street <br>
+          London, UK NW1 6XE
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-16 py-6 shadow-inner">
+    <div class="max-w-7xl mx-auto text-center text-gray-500">
+      © 2025 Movie Recommender. Built with ❤️ using TMDB API.
+    </div>
+  </footer>
+</body>
+</html>

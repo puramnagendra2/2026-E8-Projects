@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Movie Recommendation System</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Public+Sans:wght@400;500;700;900">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    body {
+      font-family: "Public Sans", "Noto Sans", sans-serif;
+    }
+
+    .movie-poster {
+      height: 240px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .placeholder-poster {
+      height: 240px;
+      background-color: #f5f3f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a7d60;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <div class="flex flex-col min-h-screen">
+    <header class="flex items-center justify-between border-b border-[#f5f3f0] px-10 py-3">
+      <div class="flex items-center gap-4 text-[#181611]">
+        <div class="w-4 h-4">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_6_330)">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                fill="currentColor"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_6_330">
+                <rect width="48" height="48" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="text-lg font-bold">
+          <a class="text-[#181611]" href="/">Movie Recommender</a>
+        </h2>
+      </div>
+      <div class="flex justify-end gap-8">
+        <div class="flex items-center gap-9">
+          <a class="text-sm font-medium text-[#181611]" href="/dashboard">dashboard</a>
+        </div>
+        <div class="flex gap-2">
+          <span class="flex items-center px-3 text-sm font-medium text-[#181611]">Welcome, {{ username }}</span>
+          <button
+            class="flex items-center justify-center h-10 px-4 overflow-hidden text-sm font-bold text-[#181611] bg-[#f5f3f0] rounded-lg min-w-[84px] max-w-[480px] truncate">
+            <a href="/logout"><span>Logout</span></a>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 px-10 py-5">
+      <h1 class="text-2xl font-bold text-[#181611] mb-6">Movie Recommendation Dashboard</h1>
+
+      <!-- Error message display -->
+      {% if error %}
+      <div class="p-3 mb-6 text-sm text-red-700 bg-red-100 rounded-lg">
+        {{ error }}
+      </div>
+      {% endif %}
+
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div class="lg:col-span-2">
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h2 class="mb-4 text-lg font-semibold">Find Movie Recommendations</h2>
+            <form method="post" action="/recommend">
+              <div class="mb-4">
+                <label for="movie" class="block mb-2 text-sm font-medium">Select a Movie</label>
+                <select id="movie" name="movie"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[#4746E5] focus:border-[#4746E5]"
+                  required>
+                  <option value="">Choose a movie...</option>
+                  {% for movie_title in movies %}
+                  <option value="{{ movie_title }}" {% if selected_movie==movie_title %}selected{% endif %}>{{
+                    movie_title }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <button type="submit"
+                class="w-full py-3 font-bold text-white bg-[#4746E5] rounded-lg hover:bg-[#e09a0d]">Get
+                Recommendations</button>
+            </form>
+          </div>
+
+          {% if has_recommendations %}
+          <div class="p-6 mt-6 bg-white rounded-lg shadow-md">
+            <h2 class="mb-4 text-lg font-semibold">Recommended Movies for "{{ selected_movie }}"</h2>
+            <div class="grid grid-cols-1 gap-2">
+              {% for name, poster in recommendations %}
+              <div class="p-3 bg-gray-50 rounded-lg">
+                <p class="text-sm font-medium">{{ name }}</p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <div>
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h2 class="mb-4 text-lg font-semibold">Your Search History</h2>
+            <div class="space-y-3">
+              {% if history %}
+              {% for item in history %}
+              <div class="p-3 bg-gray-50 rounded-lg">
+                <p class="text-sm font-medium">{{ item.movie_title }}</p>
+                <p class="text-xs text-gray-500">{{ item.searched_at }}</p>
+              </div>
+              {% endfor %}
+              {% else %}
+              <p class="text-sm text-gray-500">No search history yet.</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="p-6 mt-6 bg-white rounded-lg shadow-md">
+            <h2 class="mb-4 text-lg font-semibold">Your Stats</h2>
+            <div class="space-y-4">
+              <div>
+                <p class="text-sm text-gray-600">Movies Searched</p>
+                <p class="text-xl font-bold">{{ history|length if history else 0 }}</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Last Search</p>
+                <p class="text-xl font-bold">
+                  {% if history and history[0] %}
+                  {{ history[0].searched_at.split(' ')[0] }}
+                  {% else %}
+                  Never
+                  {% endif %}
+                </p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Recommendations Viewed</p>
+                <p class="text-xl font-bold">{{ history|length * 5 if history else 0 }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-10 text-center">
+      <p class="text-[#8a7d60]">© 2025 Movie Recommender. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+
+</html>

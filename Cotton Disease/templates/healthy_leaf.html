@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+    <title>COTTON PLANT DISEASE PREDICTION</title>
+</head>
+
+<body>
+    <button type="button" id="home-button" class="home">Home</button>
+    <div>
+        <img src="/static/images/cotton_plant_banner.jpg" class="w3-border w3-padding"
+            alt="Cotton plant disease prediction" style="width:100%">
+    </div>
+
+    <div class="container my-2">
+        <div class="row mb-5">
+
+            <div class="col-sm" style="margin-bottom: 23px;">
+                <span class="border border-primary">
+                    <img src="{{ user_image }}" alt="User Image" class="img-thumbnail">
+
+                </span>
+            </div>
+
+            <div class="col-sm">
+                <div>
+                    <h1 style="padding: 15px; background-color: rgb(153, 156, 150); color: white;"
+                        class="text-center mb-5 content-h1 rounded">
+                        {{pred_output}} </h1>
+                </div>
+                <div class="details">
+                    <h5>
+                        <b>There is no disease on the cotton Plant.</b></br></br>
+                        <b>Use proper organic natural products for better production.</b><br><br>
+                        <b>Regular observation on the plants is needed to prevent attack of the diseases</b>
+                    </h5>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('home-button').onclick = function() {
+          window.location.href = "{{ url_for('home') }}"; // Adjust 'home' to your route name
+        };
+      </script>
+</body>
+</html>

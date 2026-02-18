@@ -1,0 +1,5 @@
+venv/
+train/
+test/
+val/
+static/uploads/

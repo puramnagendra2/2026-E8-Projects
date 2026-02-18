@@ -1,0 +1,6 @@
+menv
+model.pkl
+recommendation_model.ipynb
+datasets/
+*.db
+__pycache__/

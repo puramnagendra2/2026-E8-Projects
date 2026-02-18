@@ -1,0 +1,15 @@
+streamlit
+streamlit-option-menu
+langchain
+langchain-community
+langgraph
+langchain-chroma
+langchain-ollama
+langchain-google-genai
+ollama
+bcrypt
+passlib
+pandas
+plotly
+python-dotenv
+chromadb

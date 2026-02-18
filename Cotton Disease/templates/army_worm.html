@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+      integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+
+    <title>COTTON PLANT DISEASE PREDICTION</title>
+  </head>
+
+  <body>
+    <button type="button" id="home-button" class="home">Home</button>
+    <div class="banner">
+      <img
+        src="/static/images/cotton_plant_banner.jpg"
+        class="w3-border w3-padding"
+        alt="Indian AI Production"
+      />
+    </div>
+
+    <div class="container my-2">
+      <div class="row mb-5">
+        <div class="col-sm" style="margin-bottom: 23px">
+          <span class="border border-primary">
+            <img
+              src="{{ user_image }}"
+              alt="User Image"
+              class="img-thumbnail"
+            />
+            <!-- <img src="{{pred_output}}" alt="User Image" class="img-thumbnail"> -->
+          </span>
+        </div>
+
+        <div class="col-sm">
+          <div>
+            <h1
+              style="
+                padding: 15px;
+                background-color: rgb(153, 156, 150);
+                color: white;
+              "
+              class="text-center mb-5 content-h1 rounded"
+            >
+              <b>Army Worm</b>
+            </h1>
+          </div>
+          <div>
+            <p>
+               <b>Army Worm </b>are moth-like insects that can cause significant damage to cotton crops.
+               There are multiple types of armyworms that can affect cotton,
+               including the fall armyworm and the beet armyworm. 
+            </p>
+            <br>
+              <p><b>Appearance: </b>Adult fall armyworms have brown or gray forewings and white hindwings.
+                The larvae are light-colored with a dark head and white lengthwise lines.</p>
+            <br>
+            <p><b>Damage: </b>armyworm larvae eat leaves, flowers, and bolls.
+              They can cause significant economic losses. </p>
+          </div>
+
+          <hr class="w-100 mx-auto" />
+        </div>
+      </div>
+
+      <h1>Solution for Diseases</h1>
+    </div>
+
+    <section>
+      <div class="container">
+        <h1
+          style="
+            padding: 15px;
+            background-color: rgb(153, 156, 150);
+            color: white;
+          "
+          class="text-center my-3 content-h1"
+        >
+          Recommended Products
+        </h1>
+      </div>
+
+      <div class="container">
+        <div class="card-columns">
+          <div class="card">
+            <div class="card-body text-center card-style">
+              <img
+                style="border-radius: 10px"
+                class="img-fluid"
+                src="/static/ArmyWorm/chloran.png"
+                alt=""
+              />
+            </div>
+            <h3>Chlorantraniliprole</h3>
+          </div>
+          <div class="card">
+            <div class="card-body text-center card-style">
+              <img
+                style="border-radius: 10px"
+                class="img-fluid"
+                src="/static/ArmyWorm/emam.png"
+                alt=""
+              />
+            </div>
+            <h3>Emamectin</h3>
+          </div>
+          <div class="card">
+            <div class="card-body text-center card-style">
+              <img
+                style="border-radius: 10px"
+                class="img-fluid"
+                src="/static/ArmyWorm/spine.png"
+                alt=""
+              />
+            </div>
+            <h3>Spinetoram</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.getElementById('home-button').onclick = function() {
+        window.location.href = "{{ url_for('home') }}"; // Adjust 'home' to your route name
+      };
+    </script>
+  </body>
+</html>

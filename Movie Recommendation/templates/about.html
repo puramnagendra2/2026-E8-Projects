@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Movie Recommendation System</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Public+Sans:wght@400;500;700;900">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: "Public Sans", "Noto Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <div class="flex flex-col min-h-screen">
+      <header class="flex items-center justify-between border-b border-[#f5f3f0] px-10 py-3">
+        <div class="flex items-center gap-4 text-[#181611]">
+          <div class="w-4 h-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_6_330)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_6_330"><rect width="48" height="48" fill="white"></rect></clipPath>
+              </defs>
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold">
+            <a class="text-[#181611]" href="/">Movie Recommender</a>
+          </h2>
+        </div>
+        <div class="flex justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-sm font-medium text-[#181611]" href="/">Home</a>
+            <a class="text-sm font-medium text-[#181611]" href="/contact">Contact</a>
+          </div>
+          <div class="flex gap-2">
+            <button class="flex items-center justify-center h-10 px-4 overflow-hidden text-sm font-bold text-white bg-[#4746E5] rounded-lg min-w-[84px] max-w-[480px] truncate">
+              <a href="/signup"><span>SignUp</span></a>
+            </button>
+            <button class="flex items-center justify-center h-10 px-4 overflow-hidden text-sm font-bold text-[#181611] bg-[#f5f3f0] rounded-lg min-w-[84px] max-w-[480px] truncate">
+              <a href="/login"><span>Login</span></a>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 px-10 py-5">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="mb-6 text-3xl font-bold text-[#181611]">About Movie Recommender</h1>
+          
+          <div class="p-6 mb-8 bg-[#fdf6e3] rounded-lg">
+            <p class="mb-4">Movie Recommender is an advanced content-based filtering system that helps you discover movies you'll love based on your preferences and viewing history.</p>
+            <p>Our algorithm analyzes movie features like genre, director, cast, and plot to find similar movies that match your taste.</p>
+          </div>
+          
+          <h2 class="mb-4 text-2xl font-semibold text-[#181611]">How It Works</h2>
+          
+          <div class="grid grid-cols-1 gap-6 mb-8 md:grid-cols-3">
+            <div class="p-4 bg-white rounded-lg shadow-md">
+              <div class="inline-flex items-center justify-center w-12 h-12 mb-4 text-2xl text-white bg-[#4746E5] rounded-full">
+                1
+              </div>
+              <h3 class="mb-2 text-lg font-semibold">Select a Movie</h3>
+              <p class="text-sm text-gray-600">Choose a movie you enjoy from our extensive database.</p>
+            </div>
+            
+            <div class="p-4 bg-white rounded-lg shadow-md">
+              <div class="inline-flex items-center justify-center w-12 h-12 mb-4 text-2xl text-white bg-[#4746E5] rounded-full">
+                2
+              </div>
+              <h3 class="mb-2 text-lg font-semibold">Get Recommendations</h3>
+              <p class="text-sm text-gray-600">Our algorithm finds similar movies based on content features.</p>
+            </div>
+            
+            <div class="p-4 bg-white rounded-lg shadow-md">
+              <div class="inline-flex items-center justify-center w-12 h-12 mb-4 text-2xl text-white bg-[#4746E5] rounded-full">
+                3
+              </div>
+              <h3 class="mb-2 text-lg font-semibold">Discover & Enjoy</h3>
+              <p class="text-sm text-gray-600">Find new favorites and expand your movie watching experience.</p>
+            </div>
+          </div>
+          
+          <h2 class="mb-4 text-2xl font-semibold text-[#181611]">Our Technology</h2>
+          
+          <div class="p-6 mb-8 bg-white rounded-lg shadow-md">
+            <p class="mb-4">We use content-based filtering, a sophisticated machine learning approach that analyzes movie attributes to find patterns and similarities.</p>
+            <p>Unlike collaborative filtering which relies on user ratings, our system focuses on the content itself, making it perfect for discovering niche films and overcoming the "cold start" problem for new users.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="py-10 text-center">
+        <p class="text-[#8a7d60]">© 2025 Movie Recommender. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
