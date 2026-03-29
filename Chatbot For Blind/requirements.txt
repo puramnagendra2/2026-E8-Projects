@@ -1,0 +1,11 @@
+streamlit
+streamlit-autorefresh
+speech_recognition
+opencv-python
+ultralytics
+ollama
+requests
+wikipedia
+youtube-search-python
+numpy
+pywin32; platform_system == "Windows"
